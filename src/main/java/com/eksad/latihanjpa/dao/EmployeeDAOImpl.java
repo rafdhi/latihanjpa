@@ -57,7 +57,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Override
 	public List<Employee> getByName(String name) {
 		//Employee employee = getByName(name);
-		//tambah ini aja cukup
 		//entityManager.find(employee, id);
 		return entityManager.createQuery("Select e from Employee e where e.name like ?0", Employee.class)
 				.setParameter(0, "%"+name+"%").getResultList();
@@ -66,5 +65,4 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	}
 	
 	
-
 }
